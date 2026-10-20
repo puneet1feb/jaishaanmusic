@@ -1,331 +1,940 @@
-<html>
+<!doctype html>
+<html lang="en-GB" data-theme="peacock">
 <head>
-<title>Jai shaan Music</title>
-<meta charset="utf-8" />p
-<meta name="description"
-	content="Your one stop shop to buy and repair indian musical instruments in London , UK including Harmonium , Tabla , Sitar , Dilruba">
-<meta name="keywords" content="buy,harmonium,table,sitar,london,uk,dilruba">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-<link rel="stylesheet" href="assets/css/main.css" />
-<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaishaan Music | Harmonium repair and tuning in London</title>
+<meta name="description" content="Harmonium repair specialist and tuning expert in London with 25 years of experience. Indian musical instruments for sale. Send a photo on WhatsApp for a quote.">
+<meta name="theme-color" content="#0b1d22">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jaishaan Music | Harmonium repair and tuning in London">
+<meta property="og:description" content="Harmonium repair and tuning with 25 years of experience. Serving London.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600&family=Yatra+One&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicStore",
+  "name": "Jaishaan Music",
+  "url": "http://jaishaanmusic.com",
+  "telephone": "+447405137892",
+  "email": "jaishaanmusic@gmail.com",
+  "description": "Harmonium repair and tuning with 25 years of experience, plus Indian musical instruments, in London.",
+  "areaServed": { "@type": "City", "name": "London" },
+  "sameAs": ["https://share.google/CTbGo3A2T5GChDoR0"]
+}
+</script>
 
 <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
+/* ---------- Tokens ---------- */
+:root{
+  --teak:#1e120b;
+  --teak-2:#2c1a0f;
+  --maroon:#4f1220;
+  --maroon-2:#6b1a2b;
+  --brass:#c79a3b;
+  --gold:#f1d488;
+  --ivory:#f4e8c9;
+  --paper:#efe2c1;
+  --ink:#2a1a10;
+  --wa:#25d366;
+  --wood-1:#3a2213;--wood-2:#26160b;--wood-edge:#6b4a1e;--keybed:#120a05;
+  --bell-dark:#2a160a;--bell-hi:#b88a33;--bell-mid:#7a561f;--footer:#140b06;
+  --display:'Yatra One', Georgia, 'Times New Roman', serif;
+  --body:'Hind', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --pad:clamp(20px, 5vw, 72px);
+  --gutter:max(var(--pad), calc((100vw - 1320px) / 2 + var(--pad)));
+  --head:68px;
+}
+
+/* ---------- Colour themes: change data-theme on the <html> tag ---------- */
+:root[data-theme="peacock"]{
+  --teak:#0b1d22;--teak-2:#11292f;--maroon:#0f4b52;--maroon-2:#17707a;
+  --brass:#c9a24b;--gold:#f0d98a;--ivory:#eef2e6;--paper:#e6eee0;--ink:#10282c;
+  --wood-1:#17343a;--wood-2:#10262b;--wood-edge:#3f7f86;--keybed:#07151a;
+  --bell-dark:#0a2227;--bell-hi:#5aa7ad;--bell-mid:#2f6f76;--footer:#07151a;
+}
+:root[data-theme="saffron"]{
+  --teak:#2b1205;--teak-2:#3a1a08;--maroon:#9a3b0b;--maroon-2:#c2570f;
+  --brass:#f0a42a;--gold:#ffd98a;--ivory:#fff3dc;--paper:#ffeccb;--ink:#3a1a08;
+  --wood-1:#4a2410;--wood-2:#331808;--wood-edge:#d98a1f;--keybed:#1a0b03;
+  --bell-dark:#3a1a08;--bell-hi:#f0a42a;--bell-mid:#b5600f;--footer:#1a0b03;
+}
+:root[data-theme="indigo"]{
+  --teak:#12112b;--teak-2:#1a1940;--maroon:#2b2a6e;--maroon-2:#4442a8;
+  --brass:#d3b46a;--gold:#f3dfa6;--ivory:#f0eefc;--paper:#e9e6f6;--ink:#1b1a3a;
+  --wood-1:#26254f;--wood-2:#1b1a3d;--wood-edge:#6d6aa8;--keybed:#0b0a1f;
+  --bell-dark:#15143a;--bell-hi:#8f8bd6;--bell-mid:#4f4c97;--footer:#0b0a1f;
+}
+
+/* ---------- Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--teak);
+  color:var(--ivory);
+  font-family:var(--body);
+  font-size:1.125rem;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+body::after{ /* fine paper grain over everything */
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 .9  0 0 0 0 .7  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+img{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;letter-spacing:.005em}
+p{margin:0}
+section[id]{scroll-margin-top:var(--head)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{padding-inline:var(--pad);max-width:1320px;margin-inline:auto}
+h2{font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.08}
+.lede{font-size:clamp(1.1rem,1.6vw,1.3rem);max-width:56ch;opacity:.92}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  padding:.85em 1.4em;border-radius:10px;
+  font:600 1rem/1.2 var(--body);text-decoration:none;
+  border:2px solid var(--brass);cursor:pointer;
+  transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--wa);border-color:var(--wa);color:#08301a}
+.btn-wa:hover{background:#3be37c;border-color:#3be37c}
+.btn-ghost{background:transparent;color:var(--gold)}
+.btn-ghost:hover{background:rgba(241,212,136,.12)}
+.ico{width:1.25em;height:1.25em;flex:none;fill:currentColor}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- Header ---------- */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--brass),var(--gold));transform-origin:0 50%;transform:scaleX(0);z-index:120}
+.site-header{
+  position:fixed;top:0;left:0;right:0;height:var(--head);z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding-inline:var(--pad);
+  transition:background .3s ease,box-shadow .3s ease;
+}
+.site-header.solid{background:color-mix(in srgb,var(--teak) 94%,transparent);box-shadow:0 1px 0 color-mix(in srgb,var(--brass) 35%,transparent)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:1.35rem;color:var(--gold)}
+.brand svg{width:30px;height:30px}
+.nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,32px)}
+.nav a{text-decoration:none;font-weight:500;font-size:1rem;opacity:.9}
+.nav a:hover{opacity:1;color:var(--gold)}
+.nav .btn{padding:.55em 1.1em;font-size:.95rem;opacity:1}
+.nav .btn:hover{color:#08301a}
+.menu-toggle{display:none;background:none;border:2px solid var(--brass);color:var(--gold);border-radius:8px;width:44px;height:44px;cursor:pointer;align-items:center;justify-content:center}
+.menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .25s ease,background .25s ease}
+.menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0}
+.menu-toggle span::before{top:-6px}
+.menu-toggle span::after{top:6px}
+.menu-toggle[aria-expanded="true"] span{background:transparent}
+.menu-toggle[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+@media (max-width:860px){
+  .menu-toggle{display:inline-flex}
+  .nav{
+    position:fixed;inset:0;background:var(--teak);flex-direction:column;justify-content:center;gap:22px;
+    transform:translateY(-100%);visibility:hidden;transition:transform .4s ease,visibility 0s .4s;z-index:-1;
+  }
+  .nav.open{transform:none;visibility:visible;transition:transform .4s ease}
+  .nav a{font-family:var(--display);font-size:1.9rem;opacity:1}
+  .nav .btn{font-family:var(--body);font-size:1.1rem;padding:.8em 1.4em}
+  .menu-toggle{position:relative;z-index:2}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;justify-content:space-between;gap:28px;
+  padding:calc(var(--head) + 28px) 0 0;
+  background:
+    radial-gradient(110% 60% at 18% 0%,color-mix(in srgb,var(--gold) 17%,transparent),transparent 62%),
+    radial-gradient(70% 60% at 100% 100%,color-mix(in srgb,var(--maroon) 70%,transparent),transparent 70%),
+    repeating-linear-gradient(92deg,rgba(255,255,255,.02) 0 2px,transparent 2px 9px,rgba(0,0,0,.06) 9px 11px,transparent 11px 23px),
+    var(--teak);
+}
+.hero-copy{display:grid;gap:22px;padding-inline:var(--pad);max-width:1320px;width:100%;margin-inline:auto}
+.hero h1{font-size:clamp(2.5rem,6vw,5.2rem);line-height:1.02;max-width:16ch;color:var(--ivory);text-wrap:balance}
+.hero .lede{color:var(--ivory)}
+.hero .alt{font-size:1rem;opacity:.85}
+.hero .alt a{color:var(--gold);text-underline-offset:4px}
+
+/* ---------- Playable harmonium ---------- */
+.instrument{
+  width:100%;max-width:1320px;margin-inline:auto;
+  padding:14px clamp(10px,3vw,28px) 0;
+  background:linear-gradient(180deg,var(--wood-1),var(--wood-2));
+  border-radius:22px 22px 0 0;
+  border:2px solid var(--wood-edge);border-bottom:0;
+  box-shadow:inset 0 3px 0 rgba(241,212,136,.28),0 -18px 60px rgba(0,0,0,.45);
+}
+.inst-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:2px 4px 12px;flex-wrap:wrap}
+.hint{font-size:.95rem;opacity:.85}
+.drone{
+  font:600 .9rem/1 var(--body);color:var(--gold);background:rgba(0,0,0,.25);
+  border:1.5px solid var(--brass);border-radius:8px;padding:.6em 1em;cursor:pointer;
+}
+.drone[aria-pressed="true"]{background:var(--brass);color:var(--teak)}
+.keyset{position:relative;display:flex;height:clamp(140px,22vh,220px);background:var(--keybed);padding:2px 2px 0;border-radius:6px 6px 0 0}
+.key{
+  flex:1;min-width:0;position:relative;
+  display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:0;
+  padding:0 0 10px;margin:0 1px;
+  background:linear-gradient(180deg,#fff7e2,#efdfb6 85%,#d9c690);
+  border:0;border-radius:0 0 8px 8px;
+  color:#4a2f1a;font:600 .82rem/1.15 var(--body);
+  cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:pan-y;
+  transition:transform .08s ease,background .08s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.key .dv{font-size:.72rem;font-weight:500;opacity:.7}
+.key.down{transform:translateY(3px);background:linear-gradient(180deg,#f3dc9a,#e0c070 85%,#c9a954)}
+.bkey{
+  position:absolute;top:2px;width:6.2%;height:60%;z-index:2;
+  background:linear-gradient(180deg,#46291a,#0e0703);
+  border:0;border-radius:0 0 6px 6px;cursor:pointer;touch-action:pan-y;
+  box-shadow:inset 0 -6px 0 rgba(255,255,255,.07);
+  -webkit-tap-highlight-color:transparent;
+}
+.bkey.down{background:linear-gradient(180deg,#6b4a1e,#2a170a);transform:translateY(2px)}
+
+@media (max-width:700px){
+  .kbd-hint{display:none}
+  .inst-bar{flex-wrap:nowrap}
+  .hint{font-size:.9rem}
+  .hero{gap:22px}
+  .hero-copy{gap:18px}
+}
+@media (max-width:520px){
+  .key .dv{display:none}
+  .key{font-size:.72rem;padding-bottom:8px}
+}
+
+/* ---------- Bellows divider ---------- */
+.bellows{display:flex;height:64px;align-items:center;background:var(--teak-2);--b:.5;overflow:hidden}
+.bellows span{
+  flex:1;height:100%;
+  background:linear-gradient(90deg,var(--bell-dark),var(--bell-hi) 45%,var(--bell-mid) 55%,var(--bell-dark));
+  transition:transform .12s linear;
+}
+.bellows span:nth-child(odd){transform:scaleY(calc(.42 + .58 * var(--b)))}
+.bellows span:nth-child(even){transform:scaleY(calc(1 - .5 * var(--b)))}
+
+/* ---------- Instruments (pinned horizontal scroll) ---------- */
+.gallery{position:relative;background:var(--teak-2)}
+.pin{overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);-webkit-overflow-scrolling:touch;padding:64px 0 72px}
+.track{display:flex;gap:clamp(24px,4vw,56px);width:max-content;padding-inline:var(--gutter)}
+.panel{flex:none;scroll-snap-align:center;display:flex;flex-direction:column;gap:16px;width:min(78vw,380px)}
+.panel.intro{width:min(84vw,460px);justify-content:center;gap:22px;scroll-snap-align:start}
+.panel.outro{width:min(84vw,420px);justify-content:center;gap:22px}
+.frame{
+  position:relative;width:100%;aspect-ratio:4/5;
+  border-radius:999px 999px 12px 12px;overflow:hidden;
+  background:linear-gradient(160deg,var(--maroon-2),var(--teak) 70%);
+  outline:2px solid var(--brass);outline-offset:7px;
+}
+.frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s ease}
+.panel:hover .frame img{transform:scale(1.05)}
+.panel h3{font-size:1.8rem;color:var(--gold);margin-top:8px}
+.panel p{opacity:.92;max-width:34ch}
+.panel .btn{align-self:flex-start;padding:.65em 1.1em;font-size:.95rem}
+.gallery .hint-scroll{font-size:.95rem;opacity:.75}
+
+@media (min-width:900px) and (prefers-reduced-motion:no-preference){
+  .gallery.is-pinned .pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;padding:0;scroll-snap-type:none}
+  .gallery.is-pinned .track{will-change:transform;align-items:center}
+  .gallery.is-pinned .panel{width:clamp(280px,26vw,400px)}
+  .gallery.is-pinned .panel.intro{width:clamp(320px,34vw,480px)}
+  .gallery.is-pinned .frame{max-height:56vh;aspect-ratio:4/5}
+  .gallery.is-pinned .panel.outro{width:clamp(300px,30vw,420px)}
+}
+
+/* ---------- Repair ---------- */
+.repair{background:var(--maroon);padding:clamp(72px,11vw,150px) 0;position:relative}
+.repair::before{ /* soft brass glow */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 50% at 85% 10%,color-mix(in srgb,var(--gold) 13%,transparent),transparent 70%);
+}
+.repair .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);position:relative}
+.repair-intro{position:sticky;top:calc(var(--head) + 32px);align-self:start;display:grid;gap:22px}
+.repair-intro h2{color:var(--gold)}
+.repair-intro .also{border-top:1px solid rgba(241,212,136,.4);padding-top:16px;font-size:1rem;opacity:.9;max-width:44ch}
+.years{display:flex;align-items:center;gap:18px;padding:16px 0;border-block:1px solid color-mix(in srgb,var(--gold) 40%,transparent)}
+.years .yn{font-family:var(--display);font-size:clamp(4.6rem,9vw,7.6rem);line-height:.85;color:var(--gold)}
+.years .yt{font-size:1.1rem;line-height:1.35;max-width:17ch}
+.repair-body{display:grid;gap:clamp(48px,7vw,88px)}
+.sub{font-size:clamp(1.5rem,2.4vw,1.9rem);color:var(--gold);margin-bottom:18px}
+.fixes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(20px,3vw,40px)}
+.fixes li{border-top:1px solid color-mix(in srgb,var(--gold) 38%,transparent);padding:14px 0 20px}
+.fixes strong{display:block;font-weight:600;font-size:1.08rem}
+.fixes span{display:block;font-size:.98rem;opacity:.85;margin-top:2px}
+.proofs{display:grid;gap:26px}
+.proof{margin:0;padding-left:20px;border-left:3px solid var(--gold)}
+.proof blockquote{margin:0 0 10px;font-size:1.18rem;line-height:1.55;max-width:46ch}
+.proof figcaption{font-weight:600;font-size:.98rem}
+.other{max-width:46ch}
+@media (max-width:600px){.fixes{grid-template-columns:1fr}}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:clamp(56px,10vh,120px)}
+.step{
+  display:grid;grid-template-columns:auto 1fr;gap:20px;
+  padding-left:20px;border-left:3px solid rgba(241,212,136,.25);
+  opacity:.55;transition:opacity .5s ease,border-color .5s ease;
+}
+.step.is-active{opacity:1;border-color:var(--gold)}
+.step .n{font-family:var(--display);font-size:clamp(2.4rem,5vw,4rem);line-height:1;color:var(--gold)}
+.step h3{font-size:1.6rem;margin-bottom:6px}
+.step p{max-width:42ch}
+@media (max-width:860px){
+  .repair .wrap{grid-template-columns:1fr}
+  .repair-intro{position:static}
+  .step{opacity:1}
+}
+
+/* ---------- Videos ---------- */
+.videos{padding:clamp(72px,10vw,130px) 0;background:var(--teak)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.section-head h2{color:var(--gold)}
+.arrows{display:flex;gap:10px}
+.arrow{width:48px;height:48px;border-radius:50%;border:2px solid var(--brass);background:transparent;color:var(--gold);cursor:pointer;display:grid;place-items:center;transition:background .2s ease}
+.arrow:hover{background:rgba(241,212,136,.14)}
+.arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.vid-row{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);padding:6px var(--gutter) 22px;scrollbar-width:thin;scrollbar-color:var(--brass) transparent}
+.vid-card{flex:none;width:min(84vw,520px);scroll-snap-align:start;display:grid;gap:12px}
+.vid-box{position:relative;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;border:2px solid rgba(199,154,59,.6)}
+.vid-box iframe,.vid{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid{padding:0;background:#000;cursor:pointer;display:block}
+.vid img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;transition:opacity .3s ease,transform .6s ease}
+.vid:hover img{opacity:1;transform:scale(1.04)}
+.play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--gold);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.play::after{content:"";margin-left:5px;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent var(--teak)}
+.vid-card h3{font-size:1.25rem;color:var(--ivory)}
+.vid-card p{font-size:.98rem;opacity:.8;margin-top:-6px}
+
+/* ---------- Reviews ---------- */
+.reviews{background:var(--paper);color:var(--ink);padding:clamp(72px,10vw,140px) 0}
+.reviews h2{color:var(--maroon)}
+.reviews .section-head{margin-bottom:clamp(30px,5vw,56px)}
+.featured{margin:0 0 clamp(40px,6vw,76px)}
+.featured blockquote{margin:10px 0 0;max-width:20ch;font-family:var(--display);font-size:clamp(2rem,5.4vw,4.6rem);line-height:1.1;color:var(--maroon);text-wrap:balance}
+.featured figcaption{margin-top:18px;font-weight:600}
+.stars{color:#b3801f;letter-spacing:.14em;font-size:1.05rem}
+.quotes{columns:3 300px;column-gap:clamp(22px,3vw,40px)}
+.quote{break-inside:avoid;margin:0 0 clamp(22px,3vw,36px);padding-top:16px;border-top:3px solid var(--brass)}
+.quote blockquote{margin:10px 0 12px;font-size:1.06rem}
+.quote figcaption{font-weight:600;font-size:.98rem}
+.quote figcaption span{display:block;font-weight:400;opacity:.7;font-size:.9rem}
+.reviews .btn{color:var(--maroon);border-color:var(--maroon)}
+.reviews .btn:hover{background:var(--maroon);color:var(--ivory)}
+
+/* ---------- About + Contact ---------- */
+.about{background:var(--teak-2);padding:clamp(72px,10vw,130px) 0}
+.about .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,6vw,90px);align-items:center}
+.about h2{color:var(--gold);margin-bottom:20px}
+@media (max-width:860px){.about .wrap{grid-template-columns:1fr}}
+
+.contact{
+  background:
+    radial-gradient(80% 90% at 50% 0%,color-mix(in srgb,var(--gold) 14%,transparent),transparent 65%),
+    var(--teak);
+  padding:clamp(84px,12vw,170px) 0 clamp(60px,8vw,100px);text-align:left;
+}
+.contact h2{font-size:clamp(2.6rem,8vw,6.4rem);line-height:1;color:var(--ivory);max-width:12ch;text-wrap:balance}
+.contact .lede{margin:22px 0 32px}
+.contact-lines{margin-top:40px;display:grid;gap:8px;font-size:1.1rem}
+.contact-lines a{color:var(--gold);text-underline-offset:4px}
+.contact .btn-wa{font-size:1.15rem;padding:1em 1.7em}
+
+footer{background:var(--footer);padding:26px var(--pad);font-size:.95rem;opacity:.9;border-top:1px solid rgba(199,154,59,.3)}
+footer .wrap{padding:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* ---------- Floating WhatsApp ---------- */
+.fab{
+  position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:110;
+  display:flex;align-items:center;gap:10px;height:60px;min-width:60px;padding:0 18px;
+  border-radius:999px;background:var(--wa);color:#08301a;text-decoration:none;font-weight:600;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .2s ease;
+}
+.fab:hover{transform:translateY(-3px)}
+body:not(.past-hero) .fab{opacity:0;pointer-events:none;transform:translateY(12px)}
+.fab{transition:transform .25s ease,opacity .25s ease}
+.fab .ico{width:30px;height:30px}
+.fab .lbl{display:none}
+@media (min-width:700px){.fab .lbl{display:inline}}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+  .bellows span{transform:none!important}
+}
+</style>
 </head>
-<body ng-app="myApp" class="ng-cloak">
+<body>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+</svg>
 
-		<!-- Header -->
-		<header id="header" class="alt">
-			<span class="logo"><img
-				src="assets/images/pictogram-music_stream-orange-hex.svg" alt="" /></span>
-			<h1>Jai shaan Music</h1>
-			<h2>Harmonium repair specialist</h2>
-			<h2>Harmonium tuning expert</h2>
-			<p>Your one stop shop to buy and repair indian musical instruments in London , UK including Harmonium , Tabla , Sitar , Dilruba<br />
-		</header>
+<div class="progress" aria-hidden="true"></div>
 
-		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li><a href="#intro" class="active">Products</a></li>
-				<li><a href="#gallery">Video Gallery</a></li>
-				<li><a href="#first">Services</a></li>
-				<li><a href="#second">About us</a></li>
-				<li><a href="#cta">Contact us</a></li>
-			</ul>
-		</nav>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Jaishaan Music, back to top">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 30V15C4 8 9.5 3 16 2c6.500 1 12 6 12 13v15" fill="none" stroke="#c79a3b" stroke-width="2"/><path d="M10 30V16M16 30V12M22 30V16" stroke="#f1d488" stroke-width="2" stroke-linecap="round"/></svg>
+    Jaishaan Music
+  </a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="#repair">Repair</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#instruments">Instruments</a>
+    <a href="#videos">Videos</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-wa" data-wa="Hello Jaishaan Music, I have a question." href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>WhatsApp</a>
+  </nav>
+</header>
 
-		<!-- Main -->
-		<div id="main" ng-controller="ContactController as ctrl">
-			<!-- Introduction -->
-			<section id="intro" class="main">
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Jaishaan Music</h2>
-						</header>
-						<p>Bring the rhythm of India into your Home today!</p>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<span><img src="assets/images/Poster.jpg" alt="" /></span>
-				</div>
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Harmonium</h2>
-						</header>
-						<p>We sell al kinds of harmoniums including Teak wood Peti
-							Baja, Traveller Harmonium</p>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<span class="image"><img src="assets/images/harmonium.jpg" alt="" /></span>
-				</div>
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Dilruba</h2>
-						</header>
-						<p>We sell al kinds of Dilruba</p>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<span class="image"><img src="assets/images/dilruba.jpg" alt="" /></span>
-				</div>
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Tabla</h2>
-						</header>
-						<p>We sell hand made Shesham wood and other types of Tabla</p>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<span class="image"><img src="assets/images/tabla.jpg" alt="" /></span>
-				</div>
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Other indian musical instruments</h2>
-						</header>
-						<p>We sell Sitar, Guitar, Santoor and all other Indian musical
-							instruments</p>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<span class="image"><img src="assets/images/Indian_Instruments.jpg"
-						alt="" /></span>
-				</div>
-			</section>
-			
-			<!-- Video Gallery -->
-			<section id="gallery" class="main special">
-			<header class="major">
-					<h2>Video Gallery</h2>
-				</header>
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Folding Harmonium</h2>
-						</header>
-						<span>Model No. 824</span><br>
-						<span>2 Vertical Reeds</span><br>
-						<span>3.5 Octaves</span><br>
-						<span>Coupler</span><br>
-						<span>Multifold Bellows</span><br>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<div class="embed-responsive embed-responsive-16by9">
-					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YxiuvdBFvrQ?ecver=1" allowfullscreen></iframe>
-					</div>
-				</div>
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Folding Harmonium</h2>
-						</header>
-						<span>Model No. 30</span><br>
-						<span>2 Reeds</span><br>
-						<span>3.5 Octaves</span><br>
-						<span>Coupler</span><br>
-						<span>Multifold Bellows</span><br>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<div class="embed-responsive embed-responsive-16by9">
-					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XNX57ed2Jgc?ecver=1" allowfullscreen></iframe>
-					</div>
-				</div>
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Harmonium</h2>
-						</header>
-						<span>Model No. 03</span><br>
-						<span>2 Reeds</span><br>
-						<span>3.5 Octaves 39 Keys</span><br>
-						<span>Coupler</span><br>
-						<span>Multifold Bellows</span><br>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<div class="embed-responsive embed-responsive-16by9">
-					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oG5DWXjyNiA?ecver=1" allowfullscreen></iframe>
-					</div>
-				</div>
-        <div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Harmonium</h2>
-						</header>
-						<span>Model No. 03</span><br>
-						<span>2 Reeds</span><br>
-						<span>3.5 Octaves 39 Keys</span><br>
-						<span>Coupler</span><br>
-						<span>Multifold Bellows</span><br>
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn More</a></li>
-						</ul> -->
-					</div>
-					<div class="embed-responsive embed-responsive-16by9">
-					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BcTpl3zYNwg?si=xWo4btNHgXZOLYN2" allowfullscreen></iframe>
-					</div>
-				</div>
+<main id="top">
 
-				<div class="spotlight">
-					<div class="content">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="280" height="250" src="https://www.youtube.com/embed/VcnxUs9zyxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-					</div>
-				</div>
-                <div class="spotlight">
-					<div class="content">
-						<div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="280" height="250" src="https://youtube.com/embed/Gd9hz6AgiuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-						</div>
-					</div>
-				</div>
-                <div class="spotlight">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-copy">
+      <h1 id="h1">Bring your harmonium back to life</h1>
+      <p class="lede">Harmonium repair specialist and tuning expert with 25 years of experience. Serving London.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" data-wa="Hello Jaishaan Music, my harmonium needs repair or tuning. I'm sending a photo." href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>Send a photo for a quote</a>
+        <a class="btn btn-ghost" href="tel:+447405137892">Call 07405 137892</a>
+      </div>
+      <p class="alt">Looking to buy? <a href="#instruments">See our instruments</a>.</p>
+    </div>
 
-					<div class="content">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="280" height="250" src="https://www.youtube.com/embed/DSELwP-rTa0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-					</div>
-				</div>
+    <div class="instrument">
+      <div class="inst-bar">
+        <p class="hint">Play it: tap the keys<span class="kbd-hint"> or use A to P on your keyboard</span>.</p>
+        <button class="drone" type="button" aria-pressed="false">Drone off</button>
+      </div>
+      <div class="keyset" id="keys" role="group" aria-label="Harmonium keyboard"></div>
+    </div>
+  </section>
 
-				</section>
+  <div class="bellows" aria-hidden="true"></div>
 
-			<!-- First Section -->
-			<section id="first" class="main special">
-				<header class="major">
-					<h2>Services</h2>
-				</header>
-				<ul class="features">
-					<li><span class="icon major style1 fa-music"></span>
-						<h3>Repair</h3>
-						<p>We repair all musical instruments.</p></li>
-					<li><span class="icon major style3 fa-cogs"></span>
-						<h3>Spare parts</h3>
-						<p>Spare parts available for all musical instruments</p></li>
-				</ul>
-				<!-- <footer class="major">
-					<ul class="actions">
-						<li><a href="generic.html" class="button">Learn More</a></li>
-					</ul>
-				</footer> -->
-			</section>
+  <!-- REPAIR -->
+  <section class="repair" id="repair" aria-labelledby="repair-h">
+    <div class="wrap">
+      <div class="repair-intro">
+        <h2 id="repair-h">Harmonium repair and tuning</h2>
+        <p class="years"><span class="yn">25</span><span class="yt">years of experience with harmoniums and Indian instruments</span></p>
+        <p class="lede">Send a photo or short video on WhatsApp and we'll tell you what your harmonium needs.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa" data-wa="Hello Jaishaan Music, my harmonium needs repair or tuning. I'm sending a photo." href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>Send a photo for a quote</a>
+          <a class="btn btn-ghost" href="tel:+447405137892">Call 07405 137892</a>
+        </div>
+      </div>
 
-			<!-- Second Section -->
-			<section id="second" class="main special">
-				<header class="major">
-					<h2>About Us</h2>
-					<!-- <p>
-						Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-						
-					</p> -->
-				</header>
-				<div class="video-container">
-				<iframe width="853" height="480"
-					src="https://www.youtube.com/embed/AEfwJdA-_xo"></iframe>
-					</div>
-				<!-- <p class="content">Nam elementum nisl et mi a commodo porttitor.
-					Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a
-					orci mi, elementum ac arcu sit amet, fermentum pellentesque et
-					purus. Integer maximus varius lorem, sed convallis diam accumsan
-					sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar
-					faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur
-					vestibulum. Integer eget purus nec nulla mattis et accumsan ut
-					magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus
-					et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam
-					porta. Cras eu ornare dui curabitur lacinia.</p>
-				<footer class="major">
-					<ul class="actions">
-						<li><a href="generic.html" class="button">Learn More</a></li>
-					</ul>
-				</footer> -->
-			</section>
+      <div class="repair-body">
+        <div>
+          <h3 class="sub">What we fix</h3>
+          <ul class="fixes">
+            <li><strong>Sticking or silent keys</strong><span>Keys that stick, rattle or don't sound.</span></li>
+            <li><strong>Air leaks and worn bellows</strong><span>Lost air, noisy bellows or a weak sound.</span></li>
+            <li><strong>Broken or rusty reeds</strong><span>Damaged reeds restored or replaced.</span></li>
+            <li><strong>Scale changer and coupler faults</strong><span>Jammed or loose scale changers and couplers.</span></li>
+            <li><strong>Dull or uneven sound</strong><span>Buzzing, flat or uneven notes brought back to pitch.</span></li>
+            <li><strong>Full tuning</strong><span>Every reed tuned to pitch, one by one.</span></li>
+          </ul>
+        </div>
 
-			<!-- Get Started -->
-			<section id="cta" class="main special">
-				<header class="major">
-					<h2>Contact us</h2>
-				</header>
-				<div class="generic-container">
-					<div class="panel panel-default"></div>
-					<section>
-						<dl class="alt">
-							<dt>Email</dt>
-							<dd>
-								<a href="mailto:jaishaanmusic@gmail.com?Subject=Inquiry">jaishaanmusic@gmail.com</a>
-							</dd>
-							<dt>Location</dt>
-							<dd>
-								<div id="map"></div>
-								    <script>
-								      function initMap() {
-								        var uluru = {lat: 51.6009550038438, lng: -0.40944403068522417};
-								        var map = new google.maps.Map(document.getElementById('map'), {
-								          zoom: 10,
-								          center: uluru
-								        });
-								        var marker = new google.maps.Marker({
-								          position: uluru,
-								          map: map
-								        });
-								      }
-								    </script>
-								    <script async defer
-								    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKM1FzH82yT5m5UAhij5WM800PVXSPBUQ&callback=initMap">
-								    </script>
-							</dd>
-						</dl>
-						<!-- <ul class="icons">
-								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul> -->
-					</section>
-				</div>
-			</section>
+        <div>
+          <h3 class="sub">How it works</h3>
+          <ol class="steps">
+            <li class="step">
+              <span class="n" aria-hidden="true">1</span>
+              <div><h3>Send a photo or video</h3><p>Show us the problem on WhatsApp: sticking keys, uneven reeds, air leaks or a dull sound.</p></div>
+            </li>
+            <li class="step">
+              <span class="n" aria-hidden="true">2</span>
+              <div><h3>Get a quote</h3><p>We tell you what it needs and what it will cost.</p></div>
+            </li>
+            <li class="step">
+              <span class="n" aria-hidden="true">3</span>
+              <div><h3>Repair and tune</h3><p>Reeds are tuned one by one, and keys and bellows are fixed or replaced where needed.</p></div>
+            </li>
+            <li class="step">
+              <span class="n" aria-hidden="true">4</span>
+              <div><h3>Play</h3><p>Customers tell us their harmonium sounds better than ever.</p></div>
+            </li>
+          </ol>
+        </div>
 
-	</div>
-	</div>
+        <div>
+          <h3 class="sub">Repairs customers tell us about</h3>
+          <div class="proofs">
+            <figure class="proof">
+              <blockquote>My scale changer harmonium was unrepairable. I had given up.. took it Jaishan Music and it was ready in couple of days.</blockquote>
+              <figcaption>Pankaj Ved, Google review</figcaption>
+            </figure>
+            <figure class="proof">
+              <blockquote>Paramjit Ji and Pinky Ji did an amazing job at transforming a 20 year old 3 reed 9 scale changer with coupler Harmonium from Calcutta into pitch perfect.</blockquote>
+              <figcaption>Rohan Kapadia, Google review</figcaption>
+            </figure>
+          </div>
+        </div>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/angular.min.js"></script>
-	<script src="assets/js/app.js"></script>
-	<script src="assets/js/app_controller.js"></script>
-	<script src="assets/js/contact_service.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
+        <div>
+          <h3 class="sub">Other instruments</h3>
+          <p class="other">We repair all musical instruments and supply spare parts for them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews" aria-labelledby="reviews-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="reviews-h">What customers say</h2>
+        <a class="btn" href="https://share.google/CTbGo3A2T5GChDoR0" target="_blank" rel="noopener">Read all reviews on Google</a>
+      </div>
+
+      <figure class="featured">
+        <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>I thought I needed a new harmonium. It was fixed and tuned. It plays really beautifully now.</blockquote>
+        <figcaption>Sh Pa, Google review</figcaption>
+      </figure>
+
+      <div class="quotes">
+        <figure class="quote">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Excellent harmonium sales/repair service. My harmonium sounds better than ever after the repair and tuning. Professional, knowledgeable, and very attentive to detail. The work was completed on time, and the quality exceeded my expectations.</blockquote>
+          <figcaption>devinder walia<span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Excellent service! Very friendly, kind and good communication. Harmonium tuning done to perfection, and we are really happy! Thank you so much, we recommend 100% to all!</blockquote>
+          <figcaption>Mahesh Shah<span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>An extraordinary customer service delivered very professionally for The Hare Krishna Temple thank you</blockquote>
+          <figcaption>Saci Kumara Nimai Das<span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Paramjeet jee fixed my almost broken harmonium and now it sounds so well. A very professional service.</blockquote>
+          <figcaption>Sayantani Neogi<span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Very thorough repair, and completed very quickly. The gentleman is very experienced and polite.</blockquote>
+          <figcaption>Shiv Khanna<span>Google review</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Amazing service tuning my harmonium. Highly recommend them!!!</blockquote>
+          <figcaption>Tamana Wadwa<span>Google review</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUMENTS -->
+  <section class="gallery" id="instruments" aria-label="Instruments we stock">
+    <div class="pin">
+      <div class="track">
+        <div class="panel intro">
+          <h2>Instruments</h2>
+          <p class="lede">Browse what we stock. Message us for prices and availability.</p>
+          <p class="hint-scroll">Keep scrolling to see more.</p>
+        </div>
+
+        <article class="panel">
+          <div class="frame"><img src="assets/images/harmonium.jpg" alt="Teak wood harmonium" loading="lazy"></div>
+          <h3>Harmonium</h3>
+          <p>Teak wood peti baja and traveller harmoniums, including folding models.</p>
+          <a class="btn btn-wa" data-wa="Hello Jaishaan Music, I'm interested in a harmonium. Could you share options and prices?" href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>Ask about harmoniums</a>
+        </article>
+
+        <article class="panel">
+          <div class="frame"><img src="assets/images/dilruba.jpg" alt="Dilruba" loading="lazy"></div>
+          <h3>Dilruba</h3>
+          <p>Dilrubas in a range of types.</p>
+          <a class="btn btn-wa" data-wa="Hello Jaishaan Music, I'm interested in a dilruba. Could you share options and prices?" href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>Ask about dilrubas</a>
+        </article>
+
+        <article class="panel">
+          <div class="frame"><img src="assets/images/tabla.jpg" alt="Hand-made tabla" loading="lazy"></div>
+          <h3>Tabla</h3>
+          <p>Hand-made tabla in shesham wood and other types.</p>
+          <a class="btn btn-wa" data-wa="Hello Jaishaan Music, I'm interested in a tabla set. Could you share options and prices?" href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>Ask about tabla</a>
+        </article>
+
+        <article class="panel">
+          <div class="frame"><img src="assets/images/Indian_Instruments.jpg" alt="Sitar, santoor and other Indian instruments" loading="lazy"></div>
+          <h3>Sitar, santoor and more</h3>
+          <p>Sitar, guitar, santoor and other Indian musical instruments.</p>
+          <a class="btn btn-wa" data-wa="Hello Jaishaan Music, I'm looking for an Indian musical instrument. Could you tell me what you have?" href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>Ask what we have</a>
+        </article>
+
+        <div class="panel outro">
+          <h3>Looking for something else?</h3>
+          <p>Tell us what you play and we'll help you find it.</p>
+          <a class="btn btn-wa" data-wa="Hello Jaishaan Music, I'm looking for an instrument. Can you help?" href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>Message us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="videos" id="videos" aria-labelledby="videos-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="videos-h">Watch and listen</h2>
+        <div class="arrows">
+          <button class="arrow" type="button" data-dir="-1" aria-label="Previous videos"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="arrow" type="button" data-dir="1" aria-label="Next videos"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="vid-row" tabindex="0" aria-label="Video gallery">
+      <article class="vid-card">
+        <div class="vid-box"><button class="vid" data-id="YxiuvdBFvrQ" data-title="Folding harmonium, model 824" aria-label="Play video: Folding harmonium, model 824"><img src="https://i.ytimg.com/vi/YxiuvdBFvrQ/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button></div>
+        <h3>Folding harmonium, model 824</h3>
+        <p>2 vertical reeds, 3.5 octaves, coupler, multifold bellows.</p>
+      </article>
+      <article class="vid-card">
+        <div class="vid-box"><button class="vid" data-id="XNX57ed2Jgc" data-title="Folding harmonium, model 30" aria-label="Play video: Folding harmonium, model 30"><img src="https://i.ytimg.com/vi/XNX57ed2Jgc/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button></div>
+        <h3>Folding harmonium, model 30</h3>
+        <p>2 reeds, 3.5 octaves, coupler, multifold bellows.</p>
+      </article>
+      <article class="vid-card">
+        <div class="vid-box"><button class="vid" data-id="oG5DWXjyNiA" data-title="Harmonium, model 03" aria-label="Play video: Harmonium, model 03"><img src="https://i.ytimg.com/vi/oG5DWXjyNiA/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button></div>
+        <h3>Harmonium, model 03</h3>
+        <p>2 reeds, 3.5 octaves, 39 keys, coupler, multifold bellows.</p>
+      </article>
+      <article class="vid-card">
+        <div class="vid-box"><button class="vid" data-id="BcTpl3zYNwg" data-title="Harmonium, model 03, second video" aria-label="Play video: Harmonium, model 03, second video"><img src="https://i.ytimg.com/vi/BcTpl3zYNwg/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button></div>
+        <h3>Harmonium, model 03, second video</h3>
+        <p>2 reeds, 3.5 octaves, 39 keys, coupler, multifold bellows.</p>
+      </article>
+      <article class="vid-card">
+        <div class="vid-box"><button class="vid" data-id="VcnxUs9zyxQ" data-title="From the workshop, video 1" aria-label="Play video: From the workshop, video 1"><img src="https://i.ytimg.com/vi/VcnxUs9zyxQ/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button></div>
+        <h3>From the workshop, video 1</h3>
+      </article>
+      <article class="vid-card">
+        <div class="vid-box"><button class="vid" data-id="Gd9hz6AgiuE" data-title="From the workshop, video 2" aria-label="Play video: From the workshop, video 2"><img src="https://i.ytimg.com/vi/Gd9hz6AgiuE/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button></div>
+        <h3>From the workshop, video 2</h3>
+      </article>
+      <article class="vid-card">
+        <div class="vid-box"><button class="vid" data-id="DSELwP-rTa0" data-title="From the workshop, video 3" aria-label="Play video: From the workshop, video 3"><img src="https://i.ytimg.com/vi/DSELwP-rTa0/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button></div>
+        <h3>From the workshop, video 3</h3>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div>
+        <h2 id="about-h">About Jaishaan Music</h2>
+        <p class="lede">A one-stop shop in London for buying and repairing Indian musical instruments.</p>
+      </div>
+      <div class="vid-box">
+        <button class="vid" data-id="AEfwJdA-_xo" data-title="About Jaishaan Music" aria-label="Play video: About Jaishaan Music"><img src="https://i.ytimg.com/vi/AEfwJdA-_xo/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="lede">Serving London. Send a photo of your harmonium or ask a question on WhatsApp and we'll reply as soon as we can.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" data-wa="Hello Jaishaan Music, I have a question." href="https://wa.me/447405137892"><svg class="ico"><use href="#wa"/></svg>Message us on WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+447405137892">Call 07405 137892</a>
+      </div>
+      <div class="contact-lines">
+        <p>Email: <a href="mailto:jaishaanmusic@gmail.com">jaishaanmusic@gmail.com</a></p>
+        <p>Area: London and nearby areas</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jaishaan Music</span>
+    <span>Harmonium repair and tuning with 25 years of experience. Serving London.</span>
+  </div>
+</footer>
+
+<a class="fab" data-wa="Hello Jaishaan Music, I have a question." href="https://wa.me/447405137892" aria-label="Message us on WhatsApp"><svg class="ico"><use href="#wa"/></svg><span class="lbl">WhatsApp us</span></a>
+
+<script>
+(function(){
+  'use strict';
+  var $  = function(s,r){return (r||document).querySelector(s)};
+  var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* WhatsApp links: add the pre-filled message */
+  $$('[data-wa]').forEach(function(a){
+    a.href = 'https://wa.me/447405137892?text=' + encodeURIComponent(a.getAttribute('data-wa'));
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+
+  /* Mobile menu */
+  var toggle = $('.menu-toggle'), nav = $('#nav');
+  function setMenu(open){
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  toggle.addEventListener('click', function(){ setMenu(toggle.getAttribute('aria-expanded') !== 'true'); });
+  $$('#nav a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+
+  /* ---------- Harmonium keyboard ---------- */
+  var white = [
+    {s:0,  n:'Sa',  d:'सा', k:'a'},
+    {s:2,  n:'Re',  d:'रे', k:'s'},
+    {s:4,  n:'Ga',  d:'ग',  k:'d'},
+    {s:5,  n:'Ma',  d:'म',  k:'f'},
+    {s:7,  n:'Pa',  d:'प',  k:'g'},
+    {s:9,  n:'Dha', d:'ध',  k:'h'},
+    {s:11, n:'Ni',  d:'नि', k:'j'},
+    {s:12, n:'Sa',  d:'सा', k:'k'},
+    {s:14, n:'Re',  d:'रे', k:'l'},
+    {s:16, n:'Ga',  d:'ग',  k:';'}
+  ];
+  var black = [ // after white index i
+    {i:0, s:1,  k:'w'}, {i:1, s:3,  k:'e'}, {i:3, s:6,  k:'t'},
+    {i:4, s:8,  k:'y'}, {i:5, s:10, k:'u'}, {i:7, s:13, k:'o'}, {i:8, s:15, k:'p'}
+  ];
+  var keyset = $('#keys');
+  var keyEls = {}; // keyboard char -> element
+
+  white.forEach(function(w){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'key';
+    b.setAttribute('aria-label', w.n);
+    b.innerHTML = '<span>'+w.n+'</span><span class="dv" aria-hidden="true">'+w.d+'</span>';
+    b._semi = w.s; keyset.appendChild(b); keyEls[w.k] = b;
+  });
+  black.forEach(function(k){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'bkey';
+    b.setAttribute('aria-label', 'Sharp or flat note');
+    b.style.left = ((k.i + 1) * 10 - 3.1) + '%';
+    b._semi = k.s; keyset.appendChild(b); keyEls[k.k] = b;
+  });
+
+  /* Audio: two slightly detuned reeds plus a soft octave below, like a real harmonium */
+  var ctx, master, droneNodes = null;
+  function ensureAudio(){
+    if(!ctx){
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if(!AC) return false;
+      ctx = new AC();
+      master = ctx.createGain(); master.gain.value = 0.55;
+      var lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2300; lp.Q.value = 0.7;
+      master.connect(lp); lp.connect(ctx.destination);
+    }
+    if(ctx.state === 'suspended') ctx.resume();
+    return true;
+  }
+  function hz(semi){ return 261.63 * Math.pow(2, semi / 12); }
+
+  function startNote(semi){
+    if(!ensureAudio()) return null;
+    var t = ctx.currentTime, f = hz(semi);
+    var g = ctx.createGain();
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.linearRampToValueAtTime(0.2, t + 0.06);
+    var o1 = ctx.createOscillator(); o1.type = 'sawtooth'; o1.frequency.value = f; o1.detune.value = -6;
+    var o2 = ctx.createOscillator(); o2.type = 'sawtooth'; o2.frequency.value = f; o2.detune.value = 6;
+    var o3 = ctx.createOscillator(); o3.type = 'square';   o3.frequency.value = f / 2;
+    var g3 = ctx.createGain(); g3.gain.value = 0.3;
+    o1.connect(g); o2.connect(g); o3.connect(g3); g3.connect(g); g.connect(master);
+    o1.start(t); o2.start(t); o3.start(t);
+    return { stop: function(){
+      var n = ctx.currentTime;
+      g.gain.cancelScheduledValues(n);
+      g.gain.setValueAtTime(Math.max(g.gain.value, 0.0001), n);
+      g.gain.linearRampToValueAtTime(0.0001, n + 0.18);
+      o1.stop(n + 0.22); o2.stop(n + 0.22); o3.stop(n + 0.22);
+    }};
+  }
+
+  var active = new Map(); // element -> note
+  function press(el){
+    if(active.has(el)) return;
+    el.classList.add('down');
+    active.set(el, startNote(el._semi));
+  }
+  function release(el){
+    if(!active.has(el)) return;
+    var n = active.get(el); active.delete(el);
+    el.classList.remove('down');
+    if(n) n.stop();
+  }
+
+  $$('.key, .bkey', keyset).forEach(function(el){
+    el.addEventListener('pointerdown', function(e){
+      if(e.pointerType !== 'mouse' && el.releasePointerCapture){ try{ el.releasePointerCapture(e.pointerId); }catch(_){} }
+      press(el);
+    });
+    el.addEventListener('pointerenter', function(e){ if(e.buttons === 1) press(el); });
+    ['pointerup','pointerleave','pointercancel'].forEach(function(ev){
+      el.addEventListener(ev, function(){ release(el); });
+    });
+    el.addEventListener('keydown', function(e){
+      if((e.key === 'Enter' || e.key === ' ') && !e.repeat){ e.preventDefault(); press(el); }
+    });
+    el.addEventListener('keyup', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ release(el); }
+    });
+    el.addEventListener('blur', function(){ release(el); });
+  });
+
+  /* Computer keyboard, only while the harmonium is on screen */
+  var inView = true;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ inView = es[0].isIntersecting; }, {threshold:.2}).observe(keyset);
+  }
+  document.addEventListener('keydown', function(e){
+    if(!inView || e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;
+    var el = keyEls[e.key.toLowerCase()];
+    if(el) press(el);
+  });
+  document.addEventListener('keyup', function(e){
+    var el = keyEls[e.key.toLowerCase()];
+    if(el) release(el);
+  });
+
+  /* Drone: Sa and Pa, like a tanpura */
+  var droneBtn = $('.drone');
+  droneBtn.addEventListener('click', function(){
+    var on = droneBtn.getAttribute('aria-pressed') !== 'true';
+    droneBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    droneBtn.textContent = on ? 'Drone on' : 'Drone off';
+    if(on){
+      if(!ensureAudio()) return;
+      var t = ctx.currentTime, g = ctx.createGain();
+      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.09, t + 1.2);
+      g.connect(master);
+      var oscs = [130.81, 196.0, 261.63].map(function(f, i){
+        var o = ctx.createOscillator(); o.type = 'triangle'; o.frequency.value = f; o.detune.value = i ? 3 : -3;
+        o.connect(g); o.start(t); return o;
+      });
+      droneNodes = { g: g, oscs: oscs };
+    } else if(droneNodes){
+      var n = ctx.currentTime, d = droneNodes; droneNodes = null;
+      d.g.gain.cancelScheduledValues(n);
+      d.g.gain.setValueAtTime(Math.max(d.g.gain.value, 0.0001), n);
+      d.g.gain.linearRampToValueAtTime(0.0001, n + 0.6);
+      d.oscs.forEach(function(o){ o.stop(n + 0.7); });
+    }
+  });
+
+  /* One orchestrated moment: the keys ripple down once on load (silent) */
+  if(!reduceMotion.matches){
+    var all = $$('.key', keyset);
+    all.forEach(function(k, i){
+      setTimeout(function(){ k.classList.add('down'); setTimeout(function(){ if(!active.has(k)) k.classList.remove('down'); }, 170); }, 700 + i * 90);
+    });
+  }
+
+  /* ---------- Bellows pleats breathe with scroll ---------- */
+  var bellows = $('.bellows');
+  for(var i = 0; i < 48; i++){ bellows.appendChild(document.createElement('span')); }
+
+  /* ---------- Pinned horizontal gallery ---------- */
+  var gal = $('.gallery'), track = $('.track', gal);
+  var wide = window.matchMedia('(min-width: 900px) and (prefers-reduced-motion: no-preference)');
+  function layoutGallery(){
+    if(wide.matches){
+      var dist = Math.max(0, track.offsetWidth - window.innerWidth);
+      gal.style.height = (dist + window.innerHeight) + 'px';
+      gal.classList.add('is-pinned');
+      updateGallery();
+    } else {
+      gal.style.height = '';
+      gal.classList.remove('is-pinned');
+      track.style.transform = '';
+    }
+  }
+  function updateGallery(){
+    if(!gal.classList.contains('is-pinned')) return;
+    var dist = Math.max(0, track.offsetWidth - window.innerWidth);
+    var span = gal.offsetHeight - window.innerHeight;
+    var p = span > 0 ? Math.min(1, Math.max(0, -gal.getBoundingClientRect().top / span)) : 0;
+    track.style.transform = 'translate3d(' + (-p * dist) + 'px,0,0)';
+  }
+
+  /* ---------- Scroll handler (one rAF loop) ---------- */
+  var bar = $('.progress'), header = $('.site-header'), ticking = false;
+  function onScroll(){
+    var h = document.documentElement, max = h.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+    header.classList.toggle('solid', window.scrollY > 40);
+    if(!reduceMotion.matches){ bellows.style.setProperty('--b', (0.5 + 0.5 * Math.sin(window.scrollY / 140)).toFixed(3)); }
+    updateGallery();
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  window.addEventListener('resize', function(){ layoutGallery(); onScroll(); });
+  window.addEventListener('load', function(){ layoutGallery(); onScroll(); });
+  if(wide.addEventListener){ wide.addEventListener('change', layoutGallery); }
+  layoutGallery(); onScroll();
+
+  /* Floating WhatsApp button appears once the hero is behind you */
+  var heroEl = $('.hero');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      document.body.classList.toggle('past-hero', !es[0].isIntersecting);
+    }, {threshold:0.05}).observe(heroEl);
+  } else { document.body.classList.add('past-hero'); }
+
+  /* If a photo is missing, hide the broken image and keep the arch */
+  $$('.frame img').forEach(function(im){
+    im.addEventListener('error', function(){ im.style.display = 'none'; });
+  });
+
+  /* ---------- Repair steps light up as you reach them ---------- */
+  var steps = $$('.step');
+  if('IntersectionObserver' in window){
+    var so = new IntersectionObserver(function(es){
+      es.forEach(function(e){ e.target.classList.toggle('is-active', e.isIntersecting); });
+    }, {rootMargin:'-40% 0px -40% 0px'});
+    steps.forEach(function(s){ so.observe(s); });
+  } else { steps.forEach(function(s){ s.classList.add('is-active'); }); }
+
+  /* ---------- Videos: load YouTube only when tapped ---------- */
+  $$('.vid').forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.getAttribute('data-id') + '?autoplay=1&rel=0';
+      f.title = b.getAttribute('data-title');
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      b.replaceWith(f);
+    });
+  });
+  var row = $('.vid-row');
+  $$('.arrow').forEach(function(a){
+    a.addEventListener('click', function(){
+      row.scrollBy({left: parseInt(a.getAttribute('data-dir'), 10) * row.clientWidth * 0.8, behavior: reduceMotion.matches ? 'auto' : 'smooth'});
+    });
+  });
+})();
+</script>
 </body>
 </html>
